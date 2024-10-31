@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Alunos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Tabela de Alunos</h1><a href="/" class="button"><span>Voltar</span></a>
+    </header>
+
+
+        <table class="dataframe">
+            <thead>
+                <tr>
+                    <th>Alunos</th>
+                    <th>Notas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in table_data %}
+                <tr>
+                    <td>{{ row['alunos'] }}</td>
+                    <td>{{ row['notas'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+</body>
+</html>
